@@ -1,0 +1,328 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #black;
+  --secondary-color: #0404B4;
+  --blue: #0404B4;
+  --black: #1C1C1C;
+  --yellow: #D7DF01;
+  --dark-red:#0B0B61;
+  --dark-blue:#8A0808;
+  --padding: 10px;
+  --margin:10px;
+  --border: 5px solid black;
+  --border-radius: 3px;
+  --sunset-start: #edc655;
+  --sunset-mid: #fcffad;
+  --sunset-end: #f76414;
+
+}
+
+
+body {
+  color: var(--primary-color);
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  /* Sets the font size to 16px */
+  line-height: 1.6;
+  /* Sets the line-height to 1.6 */
+  padding: var(--padding); /* Adds a 10px inner spacing to all sides*/
+  margin: var(--margin); /* Adds a 10px outer spacing to all sides*/
+  border: var(--border); /* Attributes describe: thickness, type, color*/
+
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+
+a:visited {
+  /* visited link */
+  color: var(--dark-red);
+}
+
+a:active {
+  /* selected link */
+  color: var(--dark-blue);
+}
+
+a:hover a:focus {
+  /* No underlining when hovering over a link */
+  text-decoration: none;
+}
+
+
+
+button:hover,
+button:focus {
+
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.8;
+
+}
+
+.button__secondary {
+  background-color: var(--black);
+  color: var(--yellow);
+}
+.submit-button {
+  border: none;
+  background-color: var(--black);
+  color: var(--yellow);
+  text-decoration: none;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+  border-bottom: 2px solid rgba(1, 0, 1, 1);
+  transition-duration: 1s;
+  transition-property: opacity;
+}
+
+.button,
+button {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  display: inline-block;
+  /* takes the font from the outer container */
+  font-family: papyrus;
+  /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+  background-color: var(--black);
+  color: var(--yellow);
+  text-decoration: none;
+  /*adds spacing to the button (this will be discussed more in-depth later) */
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+  border-bottom: 2px solid rgba(1, 0, 1, 1);
+  transition-duration: 1s;
+  transition-property: opacity;
+}
+
+.default-link {
+  background-color: inherit;
+  color: var(--blue);
+  text-decoration: none;
+  font-family: fantasy;
+  transition-duration: 1s;
+  transition-property: opacity;
+}
+
+.code-check {
+  background-color: inherit;
+  color: var(--blue);
+  text-decoration: none;
+  font-family: fantasy;
+
+}
+
+.navigation-list__item--active {
+  text-decoration: none;
+}
+
+
+.profile__portrait {
+  float: left;
+  width: 300px;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+
+.profile {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .profile__text {
+      flex: 1 1 100px;
+  }
+
+  .page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+  .page-header img {
+      width: 100px;
+      height: 100px;
+  }
+
+.page-header__item {
+  flex: 0 1 200px;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 20px;
+
+}
+
+.page-header__item:last-child {
+  flex-grow: 1;
+  text-align: center;
+}
+
+
+.page-footer {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+}
+
+
+.navigation-list {
+  list-style-type: none;
+}
+
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+  justify-content: space-around;
+
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.grid__item {
+  background-color: lightgray;
+  padding: 20px;
+}
+
+.berlin-illustration {
+  max-width: auto;
+  max-height: auto;
+  display:flex;
+  align-items: center;
+}
+.skills {
+
+  display:flex;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+}
+
+
+
+.eye {
+  float: left;
+  max-width: 250px;
+  max-height: 250px;
+  margin-right: 0 auto;
+}
+
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (min-width: 500px) and (max-width: 750px){
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
+
+  @keyframes sunset {
+    0% {
+      fill: var(--sunset-start);
+    }
+    50% {
+      fill: var(--sunsetmid);
+    }
+    100% {
+      fill: var(--sunset-end);
+    }
+  }
+  @keyframes cloud-move {
+    0% {
+      transform: translate(0, 50px);
+    }
+    50% {
+      transform: scale(200%);
+    }
+
+    100% {
+      transform: translate(200px, 50px);
+      transform: scale(1);
+    }
+  }
+
+@keyframes cloud-move-reverse {
+  from {
+    transform: translate(200px, 50px);
+  }
+  to {
+    transform: translate(100px, 50px);
+  }
+}
+
+
+
+.sun {
+  animation-duration: 4s;
+  animation-name: sunset;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+.cloud-front {
+  animation-duration: 30s;
+  animation-name: cloud-move;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+.cloud-back {
+  animation: 34s cloud-move-reverse infinite alternate linear;
+}
+
+
+
+
+
+
+
+
+
+
+/*lettering*/
+#eff5f5
+
+
+/*borders*/
+#283e3e
